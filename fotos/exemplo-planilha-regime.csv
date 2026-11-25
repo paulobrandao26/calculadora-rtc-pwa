@@ -1,0 +1,21 @@
+﻿Calculadora RTC — Regime normal
+3 item(ns) · Porto Alegre/RS · 25/11/2026
+Data do cálculo;25/11/2026, 17:49
+
+Data do fato gerador;25/11/2026
+Local;Porto Alegre/RS (IBGE 4314902)
+Itens;3
+
+Base de cálculo;4800
+CBS;35.82
+IBS;3.98
+Imposto Seletivo;0
+Total de tributos;39.8
+
+Item;Código;CST/cClassTrib;Situação;Base;Alíq. efetiva CBS;Redução;CBS;IBS;IS
+1;NCM 10063021;200/200003;Calculado;100,00;0,90;100,00;0,00;0,00;
+2;NBS 122011200;200/200028;Calculado;1200,00;0,90;60,00;4,32;0,48;
+3;NCM 84713012;000/000001;Calculado;3500,00;0,90;;31,50;3,50;
+
+Totais somam só os itens calculados.
+Cálculo feito pela calculadora oficial da Receita Federal (regime regular).

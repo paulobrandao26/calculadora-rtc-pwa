@@ -1,0 +1,60 @@
+# Sobe o app (web) e os 3 programas oficiais da Receita Federal.
+# Abra http://localhost:8090 depois de "docker compose up -d --build".
+services:
+  regime-regular:
+    build:
+      context: ./servicos/calculadora-rtc-regime-regular
+      dockerfile: ../../docker/regime-regular.Dockerfile
+    restart: unless-stopped
+
+  simples-nacional:
+    build:
+      context: ./servicos/calculadora-rtc-simples-nacional
+      dockerfile: ../../docker/simples-nacional.Dockerfile
+      additional_contexts:
+        regime: ./servicos/calculadora-rtc-regime-regular
+    restart: unless-stopped
+
+  danfse:
+    build:
+      context: ./servicos/calculadora-rtc-gerador-danfse
+    restart: unless-stopped
+
+  # Assistente de IA (Gemini ou Groq, grátis). A chave fica no arquivo .env (veja .env.exemplo).
+  assistente:
+    image: node:24-alpine
+    working_dir: /app
+    command: ["node", "server.mjs"]
+    volumes:
+      - ./assistente:/app:ro
+    environment:
+      IA_PROVEDOR: ${IA_PROVEDOR:-gemini}
+      IA_CHAVE: ${IA_CHAVE:-}
+      IA_MODELO: ${IA_MODELO:-}
+      IA_URL: ${IA_URL:-}
+    depends_on:
+      - regime-regular
+      - simples-nacional
+    restart: unless-stopped
+
+  # IA de mentira, só para o teste automático: docker compose --profile teste up -d
+  ia-falsa:
+    image: node:24-alpine
+    command: ["node", "/teste/ia-falsa.mjs"]
+    volumes:
+      - ./tools/ia-falsa.mjs:/teste/ia-falsa.mjs:ro
+    profiles: ["teste"]
+
+  web:
+    image: nginx:1.29-alpine
+    ports:
+      - "8090:80"
+    volumes:
+      - ./web:/usr/share/nginx/html:ro
+      - ./docker/nginx.conf:/etc/nginx/conf.d/default.conf:ro
+    depends_on:
+      - regime-regular
+      - simples-nacional
+      - danfse
+      - assistente
+    restart: unless-stopped

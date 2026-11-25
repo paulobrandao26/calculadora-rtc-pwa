@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Calculadora RTC — CBS, IBS e Imposto Seletivo</title>
+  <meta name="description" content="Calcule CBS, IBS e Imposto Seletivo da Reforma Tributária, no regime normal e no Simples Nacional, e gere o PDF da NFS-e.">
+  <meta name="theme-color" content="#0f2a44">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip" href="#main">Pular para o conteúdo</a>
+  <header class="topbar">
+    <div class="topbar-in">
+      <a class="brand" href="#/" aria-label="Calculadora RTC, voltar ao início">
+        <img src="icons/icon.svg" alt="" width="32" height="32">
+        <span><strong>Calculadora RTC</strong><small>Reforma Tributária do Consumo</small></span>
+      </a>
+      <nav class="topnav" aria-label="Principal">
+        <a href="#/" data-nav="home">Início</a>
+        <a href="#/regime" data-nav="regime">Regime normal</a>
+        <a href="#/simples" data-nav="simples">Simples Nacional</a>
+        <a href="#/danfse" data-nav="danfse">PDF da NFS-e</a>
+        <a href="#/historico" data-nav="historico">Histórico</a>
+      </nav>
+      <span id="status" class="status" title="Situação dos programas de cálculo"><i></i><span>Verificando…</span></span>
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1"></main>
+
+  <nav class="bottomnav" aria-label="Atalhos">
+    <a href="#/" data-nav="home"><svg viewBox="0 0 24 24"><path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg>Início</a>
+    <a href="#/regime" data-nav="regime"><svg viewBox="0 0 24 24"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M8 7h8M8 11h2M12 11h2M8 15h2M12 15h2M16 11v6"/></svg>Normal</a>
+    <a href="#/simples" data-nav="simples"><svg viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>Simples</a>
+    <a href="#/danfse" data-nav="danfse"><svg viewBox="0 0 24 24"><path d="M6 2h9l5 5v15H6z"/><path d="M14 2v6h6M9 13h8M9 17h6"/></svg>NFS-e</a>
+    <a href="#/historico" data-nav="historico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Histórico</a>
+  </nav>
+
+  <div id="toast" role="status" aria-live="polite"></div>
+
+  <footer class="foot">
+    <p>Usa os programas abertos da Receita Federal (licença MIT) para a LC 214/2025. Este app não é um site oficial do governo. Confira os valores antes de emitir notas.</p>
+  </footer>
+
+  <script src="vendor/jspdf.umd.min.js" defer></script>
+  <script src="vendor/jspdf.plugin.autotable.min.js" defer></script>
+  <script src="app.js" defer></script>
+</body>
+</html>

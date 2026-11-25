@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<NFSe versao="1.00" xmlns="http://www.sped.fazenda.gov.br/nfse">
+  <infNFSe Id="NFS35503082212345678000195000000000000126070000000017">
+    <xLocEmi>São Paulo</xLocEmi>
+    <xLocPrestacao>São Paulo</xLocPrestacao>
+    <nNFSe>17</nNFSe>
+    <cLocIncid>3550308</cLocIncid>
+    <xLocIncid>São Paulo</xLocIncid>
+    <xTribNac>Análise e desenvolvimento de sistemas.</xTribNac>
+    <verAplic>EXEMPLO-1.0</verAplic>
+    <ambGer>2</ambGer>
+    <tpEmis>1</tpEmis>
+    <cStat>100</cStat>
+    <dhProc>2026-07-14T10:00:00-03:00</dhProc>
+    <nDFSe>1</nDFSe>
+    <emit>
+      <CNPJ>12345678000195</CNPJ>
+      <xNome>EMPRESA EXEMPLO DE TECNOLOGIA LTDA</xNome>
+      <enderNac>
+        <xLgr>Rua Exemplo</xLgr>
+        <nro>100</nro>
+        <xBairro>Centro</xBairro>
+        <cMun>3550308</cMun>
+        <UF>SP</UF>
+        <CEP>01001000</CEP>
+      </enderNac>
+      <fone>11999990000</fone>
+      <email>contato@exemplo.com.br</email>
+    </emit>
+    <valores>
+      <vCalcDR>0.00</vCalcDR>
+      <vBC>1500.00</vBC>
+      <pAliqAplic>2.00</pAliqAplic>
+      <vISSQN>30.00</vISSQN>
+      <vTotalRet>0.00</vTotalRet>
+      <vLiq>1500.00</vLiq>
+    </valores>
+    <DPS versao="1.00">
+      <infDPS Id="DPS355030821234567800019500001000000000000017">
+        <tpAmb>2</tpAmb>
+        <dhEmi>2026-07-14T09:58:00-03:00</dhEmi>
+        <verAplic>EXEMPLO-1.0</verAplic>
+        <serie>1</serie>
+        <nDPS>17</nDPS>
+        <dCompet>2026-07-14</dCompet>
+        <tpEmit>1</tpEmit>
+        <cLocEmi>3550308</cLocEmi>
+        <prest>
+          <CNPJ>12345678000195</CNPJ>
+          <fone>11999990000</fone>
+          <email>contato@exemplo.com.br</email>
+          <regTrib>
+            <opSimpNac>3</opSimpNac>
+            <regApTribSN>1</regApTribSN>
+            <regEspTrib>0</regEspTrib>
+          </regTrib>
+        </prest>
+        <toma>
+          <CNPJ>98765432000198</CNPJ>
+          <xNome>CLIENTE EXEMPLO COMERCIO S.A.</xNome>
+          <end>
+            <endNac>
+              <cMun>3304557</cMun>
+              <CEP>20010000</CEP>
+            </endNac>
+            <xLgr>Avenida Modelo</xLgr>
+            <nro>2000</nro>
+            <xBairro>Centro</xBairro>
+          </end>
+          <email>financeiro@cliente-exemplo.com.br</email>
+        </toma>
+        <serv>
+          <locPrest>
+            <cLocPrestacao>3550308</cLocPrestacao>
+          </locPrest>
+          <cServ>
+            <cTribNac>010101</cTribNac>
+            <xDescServ>Desenvolvimento de sistema sob encomenda — módulo de cadastro de clientes (nota de exemplo, sem valor fiscal).</xDescServ>
+            <cNBS>115013000</cNBS>
+          </cServ>
+        </serv>
+        <valores>
+          <vServPrest>
+            <vServ>1500.00</vServ>
+          </vServPrest>
+          <trib>
+            <tribMun>
+              <tribISSQN>1</tribISSQN>
+              <tpRetISSQN>1</tpRetISSQN>
+            </tribMun>
+            <totTrib>
+              <indTotTrib>0</indTotTrib>
+            </totTrib>
+          </trib>
+        </valores>
+      </infDPS>
+    </DPS>
+  </infNFSe>
+</NFSe>
